@@ -16,7 +16,7 @@
 
 * 기간: 22.04.04 ~ X
 
-* Backend: https://github.com/DevStevenLee/PrivateTeacherAdvertisementBackend
+* FrontEnd: https://github.com/DevStevenLee/PrivateTeacherAdvertisementFrontend
 
 ## Stack
 
