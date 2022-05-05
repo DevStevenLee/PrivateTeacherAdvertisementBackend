@@ -25,8 +25,16 @@ UserSchema.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, salt);
 });
 
-UserSchema.methods.getSignedJwtToken = function() {
-    return jwt.sign({ id: this._id }, process.env.JWT_SECRET);
+UserSchema.methods.getAccessJwtToken = function() {
+    return jwt.sign({ id: this._id }, process.env.JWT_ACCESS_SECRET, {
+        expiresIn: process.env.JWT_ACCESS_EXPIRE
+    });
+}
+
+UserSchema.methods.getRefreshToken = function() {
+    return jwt.sign({ id: this._id }, process.env.JWT_REFRESH_SECRET, {
+        expiresIn: process.env.JWT_REFRESH_EXPIRE
+    });
 }
 
 

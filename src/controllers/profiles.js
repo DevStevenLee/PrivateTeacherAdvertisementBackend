@@ -11,7 +11,7 @@ const path = require('path');
 // @route   GET /profiles/teachers
 // @access  Public
 exports.getTeachersProfiles = asyncHandler(async (req, res, next) => {
-    const teachers = await Profile.find({ user: { "$ne": req.user.id }});
+    const teachers = await Profile.find({ user: { "$ne": req.user.id }}).lean();
 
     res.status(200).json({ success: true, data: teachers });
 });
@@ -22,7 +22,7 @@ exports.getTeachersProfiles = asyncHandler(async (req, res, next) => {
 exports.getMyProfile = asyncHandler(async (req, res, next) => {
     req.body.user = req.user.id;
 
-    const me = await Profile.findOne({ user: req.body.user });
+    const me = await Profile.findOne({ user: req.body.user }).lean();
 
     res.status(200).json({ success: true, data: me });
 });
@@ -47,7 +47,9 @@ exports.createMyProfile = asyncHandler(async (req, res, next) => {
 exports.updateMyProfile = asyncHandler(async (req, res, next) => {
     req.body.user = req.user.id;
 
-    let profile = await Profile.findOne({ user: req.body.user })
+    let profile = await Profile.findOne({ user: req.body.user }).lean()
+
+    console.log(profile);
 
     if(!profile){
         return next(
@@ -57,7 +59,7 @@ exports.updateMyProfile = asyncHandler(async (req, res, next) => {
 
     profile = await Profile.findOneAndUpdate({ user: req.body.user }, req.body,{
         runValidators: true
-    });
+    }).lean();
 
     res.status(200).json({
         success: true,
@@ -107,7 +109,7 @@ exports.uploadProfilePhoto = asyncHandler(async (req, res) => {
         { user:  req.body.user },
         { photo: { uri: file }}, 
         { runValidators: true}
-    );
+    ).lean();
 
     res.status(200).json({ success: true, data: profile })
 });
