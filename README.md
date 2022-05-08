@@ -70,35 +70,4 @@ React Native, React Context, Axios, React Navigator, React Native Cli
 
 * 선생님 데이터들을 서버에서 가져와 동적으로 Card를 생성 
 
-  
-
-## Demo
-
-#### 1. 로그인
-
-![signin](https://user-images.githubusercontent.com/50033459/165408665-012f8497-9356-4b57-9b73-18e0630273a0.gif)
-
-
-
-#### 2. 회원가입
-
-![signup](https://user-images.githubusercontent.com/50033459/165408916-1c5ab3e7-d76d-408f-9af4-8bc65deff610.gif)
-
-
-
-#### 3. 프로필 만들기
-
-![create_my_profile](https://user-images.githubusercontent.com/50033459/165409191-47634f0f-73a6-4e19-b59d-8ae0f100ecb7.gif)
-
-
-
-#### 4. 내 프로필
-
-![my_profile](https://user-images.githubusercontent.com/50033459/165409286-48b40478-0aaf-40e6-bc79-e702d0835a3b.gif)
-
-
-
-#### 5. 즐겨찾기
-
-![bookmark](https://user-images.githubusercontent.com/50033459/165409313-a98c9515-3ea2-4e3a-8221-c5dc44f8d428.gif)
-
+ 
