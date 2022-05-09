@@ -20,7 +20,7 @@
 
 ## Stack
 
-Nodejs & Express, jwt, MongoDB
+Nodejs & Express, MongoDB, Jwt
 
 
 
