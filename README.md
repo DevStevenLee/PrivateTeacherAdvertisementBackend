@@ -20,7 +20,7 @@
 
 ## Stack
 
-React Native, React Context, Axios, React Navigator, React Native Cli
+Nodejs & Express, jwt, MongoDB
 
 
 
